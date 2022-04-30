@@ -18,8 +18,8 @@
 ---
 
 ## Advanced
- - Implementing filter views - collection of views with each view having its own title and set of applied filters.
- - Async request to load options in the filter list as opposed to static list
+<!--  @Raj, commented as I'm not sure what this is- Implementing filter views - Collection of views with each view having its own title and set of applied filters. -->
+ - Possibility to load the options in the filter list asynchronously (eg: fetch options from backend)
  - Add 1 more type of filter `Min-Max` with Min and Max fields present
 
 ![image](https://user-images.githubusercontent.com/82647863/166099386-1d99d65b-d16e-4f2e-b9ab-99d5d35f5bab.png)
