@@ -17,18 +17,9 @@
 
 ---
 
-## Advanced
-<!--  @Raj, commented as I'm not sure what this is- Implementing filter views - Collection of views with each view having its own title and set of applied filters. -->
- - Possibility to load the options in the filter list asynchronously (eg: fetch options from backend)
- - Add 1 more type of filter `Min-Max` with Min and Max fields present
-
-![image](https://user-images.githubusercontent.com/82647863/166099386-1d99d65b-d16e-4f2e-b9ab-99d5d35f5bab.png)
-
----
-
 ## Final Filter Data Structure
 
-> you can refer to `server.js` file
+> Everytime, on clicking Submit button from a particular filter pop up container, it should trigger an API request(you can assume it triggers one and mock) and outputs an object with applied filters as shown below. 
 
 ```js
 {
@@ -38,16 +29,39 @@
   last_responded_type: "",
 }
 ```
+> Please note, at any given point in time, the output from the filter strip should contain only applied filter properties. And on removing a filter strip, it's corresponding props must also be removed.
 
-<!-- 	• Create  a filter view as listed above.
-	• Ability to add or remove file. On adding a filter, the option should be removed from the custom filters option. 
-    On clicking on remove, the custom filter should be added to the options list.
-	• Clicking on apply would send all the applied filters to the consuming component.
-      On clicking on cancel, the filter should be removed from the view.Filter list must be a list of group with each group containing 
-    the title and list of options to it
+## Advanced
+ - Implementing filter views - A dropdown view with each option representing a different filter view. A filter view would contain a unique label and a set    of filter values that we get from the strip. When we select a particular filter view, the filter strip should load the new set of values [**Fig 2**].
+   	```
+	[
+	  {
+	    id: 1,
+	    label: 'Paying Customers',
+	    filter: {
+	      invoice_status: [2, 3],
+	    },
+	  },
+	  {
+	    id: 2,
+	    label: 'Non paying Customers',
+	    filter: {
+	      invoice_status: [1],
+	      last_responded_from: '2022-11-17',
+	      last_responded_to: 'LAST_ONE_MONTH',
+	      last_responded_type: '2022-12-17',
+	    },
+	  },
+	]
+	```	   
+	
+   
 
-Advanced
+ - Possibility to load the options in the filter list asynchronously (eg: fetch options from backend)
+ - Add 1 more type of filter `Min-Max` with Min and Max fields present
 
-	• Implementing filter views, based on a different filter view, load a new filter set.
-	• Async request to load options in the filter list as opposed to static list. -->
+![image](https://user-images.githubusercontent.com/82647863/166099386-1d99d65b-d16e-4f2e-b9ab-99d5d35f5bab.png)
+
+---
+
 
